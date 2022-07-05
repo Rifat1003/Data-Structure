@@ -209,9 +209,6 @@ class LinkedList:
       
     return head
 
-      
-
-    
     t = head
     print(t.element)
 
