@@ -25,7 +25,7 @@ def rotateLeft(source,k):
 
     for i in range(0,k):
         source[i] = source[i+k]
-        #print(temp_src)
+        #print(source)
 
     for i in range(0,k):
         source[i+k]= temp_src[i]
@@ -34,6 +34,29 @@ def rotateLeft(source,k):
 source=[10,20,30,40,50,60]
 rotateLeft(source,3)
 print(source)
+
+#Another way 
+
+def rotateLeft(source,k):
+    
+    temp_src = [0]*7
+
+    for i in range(0,k):
+        temp_src[i]= source[i]
+        print(temp_src, "\n")
+
+    for i in range(0,k+1):
+        source[i] = source[i+k]
+        print(source)
+
+    for i in range(0,k):
+        source[i+k+1]= temp_src[i]
+
+
+source=[10,20,30,40,50,60,70]
+rotateLeft(source,3)
+print(source)
+
 
 
 #Task_03
@@ -53,7 +76,7 @@ print(source)
 
 #Task_04
 
-def rotateLeft(source,k):
+def rotateRight(source,k):
     
     temp_src = [0]*6
 
@@ -70,9 +93,55 @@ def rotateLeft(source,k):
 
 
 source=[10,20,30,40,50,60]
-rotateLeft(source,3)
+rotateRight(source,3)
 print(source)
 
+#Another way 
+
+def rotateRight(a,k):
+
+  new_arr = [0]*len(a)
+  print(new_arr)
+
+  i=len(a)-1
+  while (i>k):
+    new_arr[i]=a[i]
+    i -= 1
+  print(new_arr, "\n")
+
+
+
+  i=len(a)-1     #pointer at the last index of source
+
+  while(i>=k):
+    a[i]=a[i-k]  #shifting elements k places to the right
+    i=i-1
+  print(a, "\n")
+
+
+
+  i=0
+  while(i<k):
+    a[i]=0       #setting first k values to 0
+    i=i+1
+  print(a, "\n")
+
+
+
+  i = len(new_arr)-1
+
+  while (i>k):
+    
+    a[0]= new_arr[i]
+    i-=1
+
+
+
+
+
+a=[10,20,30,40,50,60,70]
+rotateRight(a,3)
+print(a)
 
 #Task_05
 
