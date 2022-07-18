@@ -2,17 +2,18 @@ class Node:
   def __init__(self, e):
     self.element = e
     self.next = None
+    
+    
+    
 class LinkedList:
-
-
-  
 
   def __init__(self, a):
 
     self.l = a
+    
     self.head = Node(a[0])
-
     head = self.head
+    
     for i in range(1,len(a)):
       x = Node(a[i])
       head.next = x
@@ -29,8 +30,10 @@ class LinkedList:
   
   # Count the number of nodes in the list
   def countNode(self):
+    
     count = 0
     head = self.head
+    
     while head!=None:
       head = head.next
       count+=1
@@ -39,10 +42,12 @@ class LinkedList:
   
   # Print elements in the list
   def printList(self):
+    
     head = self.head
     while head!=None:
       print(head.element,end=' ')
       head=head.next
+      
     print('\n')
 
   # returns the reference of the Node at the given index. For invalid index return None.
